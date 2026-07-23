@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiyo Uchida | AI動画・画像づくり</title>
+<title>Tara Design | AI動画・画像づくり</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,8 +15,9 @@
   .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
   h1,h2,h3,.disp{font-family:'Zen Maru Gothic',system-ui,sans-serif;}
   header{padding:84px 0 70px;position:relative;overflow:hidden;}
-  .sun{position:absolute;top:-90px;right:-70px;width:280px;height:280px;border-radius:50%;
-    background:radial-gradient(circle at 40% 40%,var(--sun)55%,#F9DFA8 100%);opacity:.35;filter:blur(2px);pointer-events:none;}
+  .sun{position:absolute;top:-80px;right:24px;width:300px;height:300px;border-radius:50%;z-index:0;
+    background:radial-gradient(circle at 40% 45%,var(--sun) 52%,#F9DFA8 100%);opacity:.34;filter:blur(2px);pointer-events:none;}
+  header>:not(.sun){position:relative;z-index:1;}
   .eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:1.5px;color:var(--peach);margin:0 0 20px;background:var(--peach-soft);padding:6px 15px;border-radius:30px;}
   h1{font-weight:900;font-size:clamp(31px,6.2vw,50px);line-height:1.4;letter-spacing:.5px;margin:0 0 22px;}
   h1 .hi{color:var(--peach);}
@@ -64,7 +65,7 @@
     <div class="sun"></div>
     <span class="eyebrow">鹿児島の、AI動画・画像づくり</span>
     <h1>「こんなの作れたら<br>いいな」を、<br><span class="hi">いっしょに</span>かたちに。</h1>
-    <p class="lead">Kiyo Uchida です。お店やサービスのための動画や画像を、AIを使ってつくっています。撮影や大きな予算がなくても、伝わる一枚・一本を。むずかしいことは、ぜんぶこちらで。</p>
+    <p class="lead">はじめまして、Tara Design です。お店やサービスのための動画や画像を、AIを使ってつくっています。撮影や大きな予算がなくても、伝わる一枚・一本を。むずかしいことは、ぜんぶこちらで。</p>
     <div class="meta">
       <span class="chip">📍 鹿児島</span><span class="chip">🎬 動画</span><span class="chip">🖼️ 画像</span><span class="chip">🎨 ブランドづくり</span>
     </div>
@@ -85,15 +86,6 @@
         </div>
       </a>
       <div class="work">
-        <div class="thumb"><img class="top" src="images/menu.jpg" alt="飲食店 デジタルメニュー"></div>
-        <div class="work-body">
-          <p class="work-cat c-sky">お店のツール</p>
-          <p class="work-name">飲食店 デジタルメニュー</p>
-          <p class="work-desc">レジ横の紙のテイクアウトメニューを見て、QRコードで開けるデジタルメニューを制作。印刷の手間をなくしてお店の負担を軽くしつつ、お客さんもその場でサッと選べる形にしました。</p>
-          <p class="work-tools">デザイン ・ HTML / SVG</p>
-        </div>
-      </div>
-      <div class="work">
         <div class="thumb"><video controls preload="none" poster="images/pv.jpg"><source src="https://taragirl.github.io/catful/catful.mp4" type="video/mp4">お使いのブラウザは動画再生に対応していません。</video></div>
         <div class="work-body">
           <p class="work-cat c-sky">動画</p>
@@ -101,6 +93,15 @@
           <p class="work-desc">Catfulブランドの世界観に合わせた、ナチュラルでやさしいトーンのプロモーション動画。サイトと同じ空気感でそろえ、静止画から動きのある表現までワンストップで制作できることを示した一本です。</p>
           <p class="work-tools">Seedance 2.0 ・ Kling</p>
           <p class="work-link">▶ 押すと再生できます</p>
+        </div>
+      </div>
+      <div class="work">
+        <div class="thumb"><img class="top" src="images/menu.jpg" alt="飲食店 デジタルメニュー"></div>
+        <div class="work-body">
+          <p class="work-cat c-sky">お店のツール</p>
+          <p class="work-name">飲食店 デジタルメニュー</p>
+          <p class="work-desc">レジ横の紙のテイクアウトメニューを見て、QRコードで開けるデジタルメニューを制作。印刷の手間をなくしてお店の負担を軽くしつつ、お客さんもその場でサッと選べる形にしました。</p>
+          <p class="work-tools">デザイン ・ HTML / SVG</p>
         </div>
       </div>
     </div>
@@ -118,7 +119,7 @@
 
   <section class="sec">
     <p class="sec-eyebrow">ABOUT</p>
-    <h2 class="sec-title">Kiyo Uchida について</h2>
+    <h2 class="sec-title">Tara Design について</h2>
     <div class="about-box">
       AIを使った動画・画像づくりを仕事にしています。これまでに、<strong>大手企業のWebサイトで使われる動画</strong>を、生成AIを駆使して制作しました。<br><br>
       大切にしているのは、<strong>「むずかしそう」を「これならできそう」に変えること</strong>。新しい道具を、ちゃんと使える形にして、お店やサービスのお手伝いをしています。
@@ -131,7 +132,7 @@
     <div class="links"><a class="btn btn-main" href="https://forms.gle/Qd5zrXFwTTY3ziJF8" target="_blank" rel="noopener">📧 相談してみる</a></div>
   </section>
 
-  <footer>© 2026 Kiyo Uchida</footer>
+  <footer>© 2026 Tara Design</footer>
 </div>
 </body>
 </html>
