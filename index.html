@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiyo Uchida | AI動画・画像づくり</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FCF8F2;--card:#FFFDFA;--ink:#3D3833;--mut:#8C8378;--dim:#B6ABA0;
+    --peach:#EF9A82;--peach-soft:#F9D9CE;--sky:#8FB9C7;--sky-soft:#DCEAEE;--sun:#F4C77B;--line:#EDE4D6;}
+  *{box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Zen Kaku Gothic New',system-ui,sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3,.disp{font-family:'Zen Maru Gothic',system-ui,sans-serif;}
+  header{padding:84px 0 70px;position:relative;overflow:hidden;}
+  .sun{position:absolute;top:-90px;right:-70px;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle at 40% 40%,var(--sun)55%,#F9DFA8 100%);opacity:.35;filter:blur(2px);pointer-events:none;}
+  .eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:1.5px;color:var(--peach);margin:0 0 20px;background:var(--peach-soft);padding:6px 15px;border-radius:30px;}
+  h1{font-weight:900;font-size:clamp(31px,6.2vw,50px);line-height:1.4;letter-spacing:.5px;margin:0 0 22px;}
+  h1 .hi{color:var(--peach);}
+  .lead{font-size:16.5px;color:var(--mut);max-width:580px;margin:0 0 30px;}
+  .meta{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{font-size:13px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:30px;padding:6px 15px;}
+  .sec{padding:60px 0;border-top:1.5px solid var(--line);}
+  .sec-eyebrow{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;color:var(--sky);margin:0 0 8px;}
+  .sec-title{font-weight:900;font-size:25px;margin:0 0 30px;letter-spacing:.5px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .work{background:var(--card);border:1.5px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;display:block;color:inherit;text-decoration:none;}
+  a.work:hover{transform:translateY(-4px);box-shadow:0 14px 30px -16px rgba(120,90,60,.28);}
+  .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--peach-soft);}
+  .thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block;}
+  .thumb video{background:#000;}
+  .thumb img.top{object-position:top;}
+  .work-body{padding:18px 20px 22px;}
+  .work-cat{font-weight:700;font-size:11.5px;letter-spacing:1px;margin:0 0 7px;}
+  .c-peach{color:var(--peach);} .c-sky{color:#6FA0AF;}
+  .work-name{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:16.5px;margin:0 0 7px;line-height:1.5;}
+  .work-desc{font-size:13.5px;color:var(--mut);margin:0 0 12px;line-height:1.7;}
+  .work-tools{font-size:12px;color:var(--dim);}
+  .work-link{margin:11px 0 0;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:12.5px;color:var(--peach);}
+  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .svc-card{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:24px 20px;text-align:center;}
+  .svc-ico{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px;}
+  .i-peach{background:var(--peach-soft);} .i-sky{background:var(--sky-soft);} .i-sun{background:#FBEACB;}
+  .svc-name{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:15.5px;margin:0 0 8px;}
+  .svc-desc{font-size:13.5px;color:var(--mut);margin:0;line-height:1.7;}
+  .about-box{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:30px 28px;font-size:15px;color:var(--mut);line-height:1.95;}
+  .about-box strong{color:var(--ink);font-weight:700;}
+  .contact{text-align:center;background:linear-gradient(160deg,var(--peach-soft),var(--sun) 220%);border-radius:30px;padding:54px 28px;margin:60px 0;}
+  .contact h2{font-weight:900;font-size:26px;margin:0 0 12px;}
+  .contact p{color:#8a6f5f;margin:0 0 26px;font-size:15px;}
+  .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 30px;border-radius:30px;font-size:15px;font-weight:700;text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;}
+  .btn-main{background:var(--ink);color:#fff;}
+  footer{text-align:center;color:var(--dim);font-size:12.5px;padding:0 0 50px;}
+  @media(max-width:640px){.grid,.svc{grid-template-columns:1fr;}header{padding:60px 0 50px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="sun"></div>
+    <span class="eyebrow">鹿児島の、AI動画・画像づくり</span>
+    <h1>「こんなの作れたら<br>いいな」を、<br><span class="hi">いっしょに</span>かたちに。</h1>
+    <p class="lead">Kiyo Uchida です。お店やサービスのための動画や画像を、AIを使ってつくっています。撮影や大きな予算がなくても、伝わる一枚・一本を。むずかしいことは、ぜんぶこちらで。</p>
+    <div class="meta">
+      <span class="chip">📍 鹿児島</span><span class="chip">🎬 動画</span><span class="chip">🖼️ 画像</span><span class="chip">🎨 ブランドづくり</span>
+    </div>
+  </header>
+
+  <section class="sec">
+    <p class="sec-eyebrow">WORKS</p>
+    <h2 class="sec-title">これまでつくったもの</h2>
+    <div class="grid">
+      <a class="work" href="https://taragirl.github.io/catful/" target="_blank" rel="noopener">
+        <div class="thumb"><img src="images/catful_site.jpg" alt="Catful ブランドサイト"></div>
+        <div class="work-body">
+          <p class="work-cat c-peach">ブランド・Webページ</p>
+          <p class="work-name">Catful ブランドサイト</p>
+          <p class="work-desc">架空のキャットフードブランド「Catful」を題材に、ブランドの世界観からサイトまで一から作ったオリジナルのコンセプト作品です。オーガニック志向の、やわらかでナチュラルな雰囲気を表現しました。</p>
+          <p class="work-tools">ChatGPT Image ・ HTML</p>
+          <p class="work-link">サイトを見る ↗</p>
+        </div>
+      </a>
+      <div class="work">
+        <div class="thumb"><img class="top" src="images/menu.jpg" alt="飲食店 デジタルメニュー"></div>
+        <div class="work-body">
+          <p class="work-cat c-sky">お店のツール</p>
+          <p class="work-name">飲食店 デジタルメニュー</p>
+          <p class="work-desc">レジ横の紙のテイクアウトメニューを見て、QRコードで開けるデジタルメニューを制作。印刷の手間をなくしてお店の負担を軽くしつつ、お客さんもその場でサッと選べる形にしました。</p>
+          <p class="work-tools">デザイン ・ HTML / SVG</p>
+        </div>
+      </div>
+      <div class="work">
+        <div class="thumb"><video controls preload="none" poster="images/pv.jpg"><source src="https://taragirl.github.io/catful/catful.mp4" type="video/mp4">お使いのブラウザは動画再生に対応していません。</video></div>
+        <div class="work-body">
+          <p class="work-cat c-sky">動画</p>
+          <p class="work-name">Catful プロモーションビデオ</p>
+          <p class="work-desc">Catfulブランドの世界観に合わせた、ナチュラルでやさしいトーンのプロモーション動画。サイトと同じ空気感でそろえ、静止画から動きのある表現までワンストップで制作できることを示した一本です。</p>
+          <p class="work-tools">Seedance 2.0 ・ Kling</p>
+          <p class="work-link">▶ 押すと再生できます</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="sec-eyebrow">WHAT I CAN DO</p>
+    <h2 class="sec-title">できること</h2>
+    <div class="svc">
+      <div class="svc-card"><div class="svc-ico i-peach">📲</div><p class="svc-name">SNS用の動画・画像</p><p class="svc-desc">InstagramやTikTokに使える短い動画、投稿用の画像。お店の魅力が伝わる一本を。</p></div>
+      <div class="svc-card"><div class="svc-ico i-sky">🖼️</div><p class="svc-name">商品・メニューの画像</p><p class="svc-desc">商品の見せ方、メニュー画像、ポスター。撮影できないものも、かたちにできます。</p></div>
+      <div class="svc-card"><div class="svc-ico i-sun">🎨</div><p class="svc-name">お店のブランドづくり</p><p class="svc-desc">ロゴや世界観、Webページまで。「お店らしさ」をまるごとお手伝いします。</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="sec-eyebrow">ABOUT</p>
+    <h2 class="sec-title">Kiyo Uchida について</h2>
+    <div class="about-box">
+      AIを使った動画・画像づくりを仕事にしています。これまでに、<strong>大手企業のWebサイトで使われる動画</strong>を、生成AIを駆使して制作しました。<br><br>
+      大切にしているのは、<strong>「むずかしそう」を「これならできそう」に変えること</strong>。新しい道具を、ちゃんと使える形にして、お店やサービスのお手伝いをしています。
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>まずは、気軽にどうぞ</h2>
+    <p>「こんなこと、できる？」だけでも大丈夫です。<br>鹿児島の小さなお店も、大歓迎です。</p>
+    <div class="links"><a class="btn btn-main" href="https://forms.gle/Qd5zrXFwTTY3ziJF8" target="_blank" rel="noopener">📧 相談してみる</a></div>
+  </section>
+
+  <footer>© 2026 Kiyo Uchida</footer>
+</div>
+</body>
+</html>
